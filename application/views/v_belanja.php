@@ -67,7 +67,7 @@
                     <!-- Button Update & Check Out -->
                         <button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-save"></i> <b>  Update Cart </b></button>
                         <a href="<?= base_url('belanja/clear') ?>" class="btn btn-warning btn-flat"><i class="fa fa-recycle"></i> <b> Clear All Cart </b></a>
-                        <a href="#" class="btn btn-info btn-flat"><i class="fa fa-check"></i> <b> Check Out </b> </a>
+                        <a href="<?= base_url('belanja/checkout') ?>" class="btn btn-info btn-flat"><i class="fa fa-check"></i> <b> Check Out </b> </a>
                     <!-- Button Update & Check Out -->
                     <?php echo form_close(); ?>
                     <br>

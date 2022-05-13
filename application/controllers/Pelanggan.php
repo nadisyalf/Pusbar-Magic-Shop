@@ -10,6 +10,8 @@ class Pelanggan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_pelanggan');
+        $this->load->model('m_auth');
+        
         
     }
     
@@ -52,5 +54,42 @@ class Pelanggan extends CI_Controller
             redirect('pelanggan/register');
 
         }  
+    }
+
+    public function login()
+    {
+        $this->form_validation->set_rules('email', 'Email', 'required', array(
+            'required' => '%s Harus Diisi !!!'
+        ));
+        $this->form_validation->set_rules('password', 'Password', 'required', array(
+            'required' => '%s Harus Diisi !!!'
+        ));
+        
+        if ($this->form_validation->run() == TRUE) {
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $this->pelanggan_login->login($email, $password);
+        }
+        
+        $data = array(
+                'title' => 'Login Pelanggan',
+                'isi' =>'v_login_pelanggan',
+            );
+            $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
+    }
+
+    public function logout()
+    {
+        $this->pelanggan_login->logout();
+    }
+    public function profil()
+    {
+        //proteksi halaman
+        $this->pelanggan_login->proteksi_halaman();
+        $data = array(
+            'title' => 'Profil Saya',
+            'isi' =>'v_profil_saya',
+        );
+        $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
 }
