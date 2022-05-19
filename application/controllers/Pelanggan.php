@@ -72,7 +72,7 @@ class Pelanggan extends CI_Controller
         }
         
         $data = array(
-                'title' => 'Login Pelanggan',
+                'title' => '👤Login Pelanggan',
                 'isi' =>'v_login_pelanggan',
             );
             $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
@@ -87,7 +87,7 @@ class Pelanggan extends CI_Controller
         //proteksi halaman
         $this->pelanggan_login->proteksi_halaman();
         $data = array(
-            'title' => 'Profil Saya',
+            'title' => '👤Profil Saya',
             'isi' =>'v_profil_saya',
         );
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);

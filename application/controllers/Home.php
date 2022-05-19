@@ -17,7 +17,7 @@ class Home extends CI_Controller
     public function index()
     {
         $data = array(
-            'title' => 'Home',
+            'title' => '🏡Home',
             'menu'=>$this->m_home->get_all_data(),
             'isi' =>'v_home',
         );
@@ -29,7 +29,7 @@ class Home extends CI_Controller
     {
         $kategori = $this->m_home->kategori($id_kategori);
         $data = array(
-            'title' => 'Kategori Menu : ' . $kategori->nama_kategori,
+            'title' => '🧁Kategori Menu : ' . $kategori->nama_kategori,
             'menu'=>$this->m_home-> get_all_data_menu($id_kategori),
             'isi' =>'v_kategori_menu',
         );
@@ -40,7 +40,7 @@ class Home extends CI_Controller
     {
         //$kategori = $this->m_home->kategori($id_kategori);
         $data = array(
-            'title' => 'Detail Menu',
+            'title' => '🍰Detail Menu',
             'gambar' =>$this->m_home-> gambar_menu($id_menu),
             'menu'=>$this->m_home-> detail_menu($id_menu),
             'isi' =>'v_detail_menu',

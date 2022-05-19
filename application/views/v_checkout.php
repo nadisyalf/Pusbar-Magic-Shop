@@ -8,7 +8,7 @@
                         <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
                     </svg>
                     </i> Pusbar Cake Shop
-                    <small class="float-right"> Tanggal : <?= date('d-m-y') ?></small>
+                    <small class="float-right"> Tanggal : <?= date('d-m-Y') ?></small>
                 </h4>
             </div>
                 <!-- /.col -->
@@ -53,38 +53,41 @@
                 <!-- /.col -->
             </div>
             <!-- /.row -->
-            <?php
 
-            echo form_open('belanja/proses_checkout');
-            //random string bersifat unique
-            $no_order = date('ymd').strtoupper(random_string('alnum',8));
-            //echo $no_order;
-            
+            <?php 
+            //notif form kosong
+                echo validation_errors('<div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>','</div>');
+            ?>
+            <?php
+                echo form_open('belanja/checkout');
+                //untuk no_order unik
+                $no_order = date('Ymd') . strtoupper(random_string('alnum', 8));
             ?>
             <div class="row">
                 <!-- accepted payments column -->
                 <div class="col-sm-8 invoice-col">
-                    Tujuan
+                    <h4><u> DATA PENGIRIMAN </u></h4> 
                     <div class="row">
                         <div class="col-sm-6">
                             <!-- Nama Menu -->
                             <div class="form-group">
                                 <label>Nama Penerima</label>
-                                <input  name="nama_penerima" class="form-control">
+                                <input  name="nama_penerima" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <!-- Nama Menu -->
                             <div class="form-group">
                                 <label>Nomor Telepon</label>
-                                <input  name="no_tlp" class="form-control">
+                                <input  name="no_penerima" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <!-- Nama Menu -->
                             <div class="form-group">
                                 <label>Alamat Penerima</label>
-                                <input " name="alamat" class="form-control">
+                                <input " name="alamat" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -108,7 +111,7 @@
                             <!-- Nama Menu -->
                             <div class="form-group">
                                 <label>Kode Pos</label>
-                                <input  name="kode_pos" class="form-control">
+                                <input  name="kode_pos" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -158,29 +161,37 @@
             </div>
             <!-- /.row -->
 
-            <!-- Simpan Transaksi -->
-            <input name="no_order" value="<?= $no_order ?>">
-            <input name="estimasi">
-            <input name="ongkir" >
-            <input name="no_order" value="<?= $total_berat ?>"><br>
-            <input name="grand_total" value="<?= $this->cart->total() ?>">
-            <input name="total_bayar">
+            <!-- simpan transaksi -->
+            <input name="no_order" value="<?=$no_order?>" hidden>
+            <input name="estimasi" hidden>
+            <input name="ongkir" hidden>
+            <input name="berat" value="<?= $total_berat ?>" hidden><br>
+            <input name="grand_total" value="<?= $this->cart->total() ?>" hidden>
+            <input name="total_bayar" hidden>
+            <!-- end simpan transaksi -->
 
-            <!-- Simpan Transaksi -->
+            <!-- simpan rinci transaksi -->
+            <?php
+            $i = 1;
+            foreach ($this->cart->contents() as $items ) {
+                echo form_hidden('qty' .$i++  , $items['qty']);
+            }
+
+            ?>
             <div class="row no-print">
                 <div class="col-12">
-
-                    <button type="submit" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Check Out Process
+                    <button type="submit" class="btn btn-success float-right"><i class="fas fa fa-rocket"></i> Check Out Process
                     </button>
                     <a href ="<?=base_url('belanja')?>" type="button" class="btn btn-warning float-right" style="margin-right: 5px;">
                         <i class="fas fa-shopping-cart "></i> Back To Shopping Cart
-                                    </a>
+                    </a>
                 </div>
             </div>
             <?php echo form_close() ?>
             
         </div>
-    </div>
+</div>
+    
 <!-- /.invoice -->
 
 
@@ -251,20 +262,24 @@
             //menampilkan ongkir
             var dataongkir = $("option:selected", this).attr('ongkir');
                 var reverse = dataongkir.toString().split('').reverse().join(''),
-                    dataongkir = reverse.match(/\d{1,3}/g);
-                    dataongkir = dataongkir.join(',').split('').reverse().join('');
-                $("#ongkir").html("Rp. " + dataongkir)
+                    ribuan_dataongkir = reverse.match(/\d{1,3}/g);
+                    ribuan_dataongkir = ribuan_dataongkir.join(',').split('').reverse().join('');
+                $("#ongkir").html("Rp. " + ribuan_dataongkir)
             //alert(dataongkir)
             //menghitung total bayar
             //var ongkir = $("option:selected", this).attr('ongkir');
             var totalbayar = parseInt(dataongkir) + parseInt(<?= $this->cart->total() ?>);
                 var reverse2 = totalbayar.toString().split('').reverse().join(''),
-                    totalbayar = reverse2.match(/\d{1,3}/g);
-                    totalbayar = totalbayar.join(',').split('').reverse().join('');
-            $("#totalbayar").html("Rp. " + totalbayar)
+                    ribuan_totalbayar = reverse2.match(/\d{1,3}/g);
+                    ribuan_totalbayar = ribuan_totalbayar.join(',').split('').reverse().join('');
+            $("#totalbayar").html("Rp. " + ribuan_totalbayar)
 
             //estimasi & ongkir input
             var estimasi = $("option:selected", this).attr('estimasi');
+            $("input[name=estimasi]").val(estimasi);
+            $("input[name=ongkir]").val(dataongkir);
+            $("input[name=total_bayar]").val(totalbayar);
+
             
         });  
     });

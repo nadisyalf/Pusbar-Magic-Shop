@@ -26,7 +26,7 @@
                 with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-            <a href="<?= base_url('admin')?>" class="nav-link <?php if($this->uri->segment(1) =='admin') {echo "active";
+            <a href="<?= base_url('admin')?>" class="nav-link <?php if($this->uri->segment(1) =='admin' and $this->uri->segment(1) == '') {echo "active";
                 }?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>Dashboard</p>
@@ -56,37 +56,32 @@
                     <i class="nav-icon fas fa-image"></i>
                     <p>Gambar Menu</p>
                 </a>
-
-            <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                    Starter Pages
-                    <i class="right fas fa-angle-left"></i>
-                </p>
-                </a>
-                <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Active Page</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Inactive Page</p>
-                    </a>
-                </li>
-                </ul>
             </li>
+
             <li class="nav-item">
-                <a href="<?= base_url('admin/setting')?>" class="nav-link <?php if($this->uri->segment(1) =='setting') {echo "active";
+                <a href="<?= base_url('admin/pesanan_masuk')?>" class="nav-link <?php if($this->uri->segment(2) =='pesanan_masuk' and $this->uri->segment(1) == 'admin') {echo "active";
+                }?>">
+                    <i class="nav-icon fas fa-shopping-bag"></i>
+                    <p>Pesanan Masuk</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('laporan')?>" class="nav-link <?php if($this->uri->segment(1) =='laporan') {echo "active";
+                }?>">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>Invoice</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('admin/setting')?>" class="nav-link <?php if($this->uri->segment(2) =='setting') {echo "active";
                 }?>">
                 <i class="nav-icon fa fa-asterisk"></i>
                 <p>Setting</p>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a href="<?=base_url('user') ?>" class="nav-link <?php if($this->uri->segment(1) =='user') {echo "active";
                 }?>">
@@ -94,12 +89,14 @@
                 <p>User</p>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a href="<?= base_url('auth/logout_user')?>" class="nav-link">
                 <i class="nav-icon fas fa-sign"></i>
                 <p>Log Out</p>
                 </a>
             </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

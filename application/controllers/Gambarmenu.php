@@ -19,7 +19,7 @@ class Gambarmenu extends CI_Controller
     public function index()
     {
         $data = array(
-            'title' => 'Gambar Menu',
+            'title' => '🖼️Gambar Menu',
             'gambarmenu' => $this->m_gambarmenu->get_all_data(),
             'isi' =>'gambarmenu/v_index',
         );
@@ -44,7 +44,7 @@ class Gambarmenu extends CI_Controller
             $field_name = "gambar";
             if (!$this->upload->do_upload($field_name)) {
                 $data = array(
-                    'title' => 'Add Gambar Menu',
+                    'title' => '🖼️Add Gambar Menu',
                     'error_upload'=>$this->upload->display_errors(),
                     'menu' =>$this->m_menu->get_data($id_menu),
                     'gambar' => $this->m_gambarmenu->get_gambar($id_menu),
@@ -69,7 +69,7 @@ class Gambarmenu extends CI_Controller
         
 
         $data = array(
-            'title' => 'Add Gambar',
+            'title' => '📷Add Gambar',
             'menu' =>$this->m_menu->get_data($id_menu),
             'gambar' => $this->m_gambarmenu->get_gambar($id_menu),
             'isi' =>'gambarmenu/v_add',

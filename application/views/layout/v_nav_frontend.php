@@ -64,9 +64,8 @@
                             
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-shopping-bag mr-2"></i> Pesanan Saya
-                           
+                        <a href="<?= base_url('pesanan_saya')?>" class="dropdown-item">
+                            <i class="fas fa-shopping-bag mr-2"></i> My Order
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="<?= base_url('pelanggan/logout')?>" class="dropdown-item dropdown-footer">Log Out</a>

@@ -11,8 +11,8 @@
                 echo validation_errors('<div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h5><i class="icon fas fa-info"></i>', '</h5></div>');
+
                 //notif gagal upload
-                
                 if (isset($error_upload)) {
                     echo '<div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

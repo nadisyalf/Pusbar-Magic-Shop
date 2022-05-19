@@ -18,7 +18,7 @@ class Kategori extends CI_Controller {
     public function index( $offset = 0 )
     {
         $data = array(
-            'title' => 'Kategori',
+            'title' => '🍩Kategori',
             'kategori' => $this->m_kategori->get_all_data(),
             'isi' =>'v_kategori',
         );

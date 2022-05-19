@@ -19,7 +19,7 @@ class Menu extends CI_Controller
     public function index()
     {
         $data = array(
-            'title' => 'Menu',
+            'title' => '🍪Menu',
             'menu' => $this->m_menu->get_all_data(),
             'isi' =>'menu/v_menu',
         );
@@ -60,7 +60,7 @@ class Menu extends CI_Controller
             $field_name = "gambar";
             if (!$this->upload->do_upload($field_name)) {
                 $data = array(
-                    'title' => 'Add Menu',
+                    'title' => '🍪Add Menu',
                     'kategori' => $this->m_kategori->get_all_data(),
                     'error_upload'=>$this->upload->display_errors(),
                     'isi' =>'menu/v_add',
@@ -86,7 +86,7 @@ class Menu extends CI_Controller
         }
         
         $data = array(
-            'title' => 'Add Menu',
+            'title' => '🍪Add Menu',
             'kategori' => $this->m_kategori->get_all_data(),
             'isi' =>'menu/v_add',
         );
@@ -127,7 +127,7 @@ class Menu extends CI_Controller
             $field_name = "gambar";
             if (!$this->upload->do_upload($field_name)) {
                 $data = array(
-                    'title' => 'Edit Menu',
+                    'title' => '🍮Edit Menu',
                     'kategori' => $this->m_kategori->get_all_data(),
                     'menu' =>$this->m_menu->get_data($id_menu),
                     'error_upload'=>$this->upload->display_errors(),
@@ -175,7 +175,7 @@ class Menu extends CI_Controller
         }
         
         $data = array(
-            'title' => 'Edit Menu',
+            'title' => '🍮Edit Menu',
             'kategori' => $this->m_kategori->get_all_data(),
             'menu' =>$this->m_menu->get_data($id_menu),
             'isi' =>'menu/v_edit',

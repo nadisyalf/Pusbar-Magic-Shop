@@ -20,7 +20,7 @@ class Auth extends CI_Controller {
             $this->user_login->login($username, $password);
         }
         $data = array(
-            'title' => 'Login User',
+            'title' => '👤Login User',
         );
         $this->load->view('v_login_user', $data, FALSE);
     }
