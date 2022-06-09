@@ -179,12 +179,14 @@
 
             ?>
             <div class="row no-print">
+                
                 <div class="col-12">
                     <button type="submit" class="btn btn-success float-right"><i class="fas fa fa-rocket"></i> Check Out Process
                     </button>
                     <a href ="<?=base_url('belanja')?>" type="button" class="btn btn-warning float-right" style="margin-right: 5px;">
                         <i class="fas fa-shopping-cart "></i> Back To Shopping Cart
                     </a>
+                    <button class="btn btn-default" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
                 </div>
             </div>
             <?php echo form_close() ?>

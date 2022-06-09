@@ -34,8 +34,8 @@ class M_pelanggan extends CI_Model
 
     public function edit($data)
     {
-        $this->db->where('id_menu', $data['id_menu']);
-        $this->db->update('tbl_menu', $data);
+        $this->db->where('id_pelanggan', $data['id_pelanggan']);
+        $this->db->update('tbl_pelanggan', $data);
     }
 
     public function delete($data)

@@ -122,5 +122,46 @@ class Pelanggan extends CI_Controller
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
 
+    public function edit( $id_pelanggan = NULL )
+    {
+        $this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+
+        $this->form_validation->set_rules('id_kategori', 'Kategori', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+        
+        $this->form_validation->set_rules('harga', 'Harga', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+
+        $this->form_validation->set_rules('berat', 'Berat', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+
+        $this->form_validation->set_rules('keterangan', 'Keterangan', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+
+        $data = array(
+            'id_pelanggan' =>$id_pelanggan,
+            'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+            'alamat' => $this->input->post('alamat'),
+            'no_telp' => $this->input->post('no_telp'),
+    );
+        $this->m_pelanggan->edit($data);
+        $this->session->set_flashdata('pesan', 'Data Berhasil Diupdate!!!');
+        redirect('pelanggan/profilsaya');
+    }
+
+    public function hapus_akun($id_pelanggan = NULL)
+    {
+        $data = array('id_pelanggan' => $id_pelanggan);
+        $this->m_pelanggan->delete($data);
+        redirect('home');
+    }
     
+
+
 }
