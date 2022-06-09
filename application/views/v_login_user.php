@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Pusbar Cake </b> SHOP</a>
+    <a href="#"><b>Pusbar Magic </b> SHOP</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

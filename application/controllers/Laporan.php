@@ -67,7 +67,7 @@ class Laporan extends CI_Controller
         $data = array(
             'title' => '📝 Laporan Penjualan Tahunan',
             'tahun' =>  $tahun,
-            'laporan'=>$this->m_laporan->lap_bulanan($tahun),
+            'laporan'=>$this->m_laporan->lap_tahunan($tahun),
             'isi' =>'v_lap_tahunan',
         );
         $this->load->view('layout/v_wrapper_backend', $data, FALSE);
