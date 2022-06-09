@@ -18,13 +18,25 @@ class M_pelanggan extends CI_Model
         
         
     }
-    public function tampil_data($id_pelanggan= null)
+    public function tampil_data()
     {
-        return $this->db->get_where('tbl_pelanggan', $id_pelanggan);
-        
-    }
-
+ 
+            $this->db->select('*');
+            $this->db->from('tbl_pelanggan');
+            //$this->db->where('status_order = 2');
+            $this->db->where('id_pelanggan', $this->session->userdata('id_pelanggan'));
+            $this->db->order_by('id_pelanggan', 'desc');  
     
+            return $this->db->get()->result();
+    }
+        
+    
+
+    public function edit($data)
+    {
+        $this->db->where('id_menu', $data['id_menu']);
+        $this->db->update('tbl_menu', $data);
+    }
 
     public function delete($data)
     {

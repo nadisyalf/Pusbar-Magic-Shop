@@ -87,7 +87,7 @@ class Pesanan_saya extends CI_Controller
         );
         $this->m_pesanan_masuk->update_pesanan($data);
 
-        $this->session->set_flashdata('pesan', 'Pesanan Sudah DIterima !!!');
+        $this->session->set_flashdata('pesan', 'Pesanan Sudah Diterima !!!');
                 redirect('pesanan_saya');
     }
 }

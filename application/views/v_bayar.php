@@ -9,7 +9,7 @@
                 <p class="text-bold text-center" > Jumlah Yang Dibayarkan </p>
                 <h3 class= "text-bold text-center text-danger"> | Rp. <?= number_format($pesanan->total_bayar, 0) ?> ,- | </h3>
                 <br>
-                <p class= "text-info">Pembayaran DIlanjutkan Dengan Transfer Ke Rekening Dibawah ini : </p>
+                <p class= "text-info">Pembayaran Dilanjutkan Dengan Transfer Ke Rekening Dibawah ini : </p>
                 <table class="table">
                     <tr>
                         <th>Nama Bank</th>

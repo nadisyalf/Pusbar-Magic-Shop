@@ -108,17 +108,19 @@ class Pelanggan extends CI_Controller
     {
         $this->pelanggan_login->logout();
     }
-    public function profil()
+
+    public function profilsaya()
     {
         //proteksi halaman
         $this->pelanggan_login->proteksi_halaman();
         $data = array(
             'title' => '👤Profil Saya',
-            'pelanggan'=>$this->m_pelanggan->tampil_data($id_pelanggan= null),
-            
+            'pelanggan'=>$this->m_pelanggan->tampil_data(),
             'isi' =>'v_profil_saya',
         );
-       
+
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
+
+    
 }

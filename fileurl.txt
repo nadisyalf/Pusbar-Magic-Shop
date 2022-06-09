@@ -113,3 +113,9 @@ https://www.tokopedia.com/btsalbums/bts-army-bomb-ver-3 -> link
         </li>
         </ul>
     </nav>
+
+Punya Profil Saya
+    <div class="card-footer">
+    <a href="<?= base_url('pelanggan/edit/' .$value->id_pelanggan) ?>" class="btn btn-warning btn-sm" ><i class="fa fa-edit">Edit Profil</i></a>
+    <a href="<?= base_url('pelanggan/delete/' .$value->id_pelanggan) ?>" class="btn btn-danger btn-sm" ><i class="fa fa-trash">Hapus Akun</i></a>
+</div>
