@@ -14,11 +14,35 @@ class Pelanggan extends CI_Controller
         
         
     }
-    
+
+    public function index( )
+    {
+            $data = array(
+                'title' => '👤 Customer',
+                'pelanggan' => $this->m_pelanggan->get_all_data(),
+                'isi' =>'v_pelanggan',
+            );
+            $this->load->view('layout/v_wrapper_backend', $data, FALSE);
+
+            
+    }
+    public function delete($id_pelanggan= NULL)
+    {
+        $data = array('id_pelanggan' => $id_pelanggan);
+        $this->m_pelanggan->delete($data);
+        $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus !!!');
+        redirect('pelanggan');
+    }
 
     public function register()
     {
-        $this->form_validation->set_rules('nama_pelanggan', 'Nama Telepon', 'required',
+        $this->form_validation->set_rules('nama_pelanggan', 'Nama Pelanggan', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required',
+        array('required' => '%s Harus Diisi !!!'
+        ));
+        $this->form_validation->set_rules('no_telp', 'Nomor Telepon', 'required',
         array('required' => '%s Harus Diisi !!!'
         ));
         $this->form_validation->set_rules('email', 'Email', 'required|is_unique[tbl_pelanggan.email]',
@@ -45,6 +69,8 @@ class Pelanggan extends CI_Controller
         }else{
             $data = array(
                 'nama_pelanggan'=> $this->input->post('nama_pelanggan'),
+                'alamat'=> $this->input->post('alamat'),
+                'no_telp'=> $this->input->post('no_telp'),
                 'email' => $this->input->post('email'),
                 'password' => $this->input->post('password'),
 
@@ -88,8 +114,11 @@ class Pelanggan extends CI_Controller
         $this->pelanggan_login->proteksi_halaman();
         $data = array(
             'title' => '👤Profil Saya',
+            'pelanggan'=>$this->m_pelanggan->tampil_data($id_pelanggan= null),
+            
             'isi' =>'v_profil_saya',
         );
+       
         $this->load->view('layout/v_wrapper_frontend', $data, FALSE);
     }
 }

@@ -3,7 +3,7 @@
     <div class="col-sm-6">
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">PUSBAR CAKE SHOP 🍰</h3>
+                <h3 class="card-title">PUSBAR MAGIC SHOP 🪄</h3>
             </div>
             <div class="card-body">
                 <p class="text-bold text-center" > Jumlah Yang Dibayarkan </p>

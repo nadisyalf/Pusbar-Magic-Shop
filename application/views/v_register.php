@@ -20,10 +20,26 @@
                         }
                         echo form_open(); ?>
                             <div class="input-group mb-3">
-                                <input type="text" name="nama_pelanggan" value="<?= set_value('nama_pelangga') ?>" class="form-control" placeholder="Nama Pelanggan">
+                                <input type="text" name="nama_pelanggan" value="<?= set_value('nama_pelanggan') ?>" class="form-control" placeholder="Nama Pelanggan">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" name="alamat" value="<?= set_value('alamat') ?>" class="form-control" placeholder="Alamat">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-home"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" name="no_telp" value="<?= set_value('no_telp') ?>" class="form-control" placeholder="Nomor Telepon">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-phone"></span>
                                     </div>
                                 </div>
                             </div>

@@ -3,8 +3,8 @@
         <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Pesanan Masuk</span>
-            <span class="info-box-number">760</span>
+            <span class="info-box-text">Jumlah Pesanan</span>
+            <span class="info-box-number"><?= $total_pesanan_masuk ?></span>
         </div>
         <a href="#" class="small-box-footer">More Info <i class="fa fa-info-circle"></i></a>
     </div>
@@ -28,7 +28,7 @@
     <div class="info-box mb-3">
         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cubes"></i></span>
         <div class="info-box-content">
-            <span class="info-box-text">Our Menu</span>
+            <span class="info-box-text">Jumlah Barang</span>
             <span class="info-box-number"><?= $total_barang?></span>
         </div>
         <a href="<?= base_url('menu')?>" class="small-box-footer">More Info <i class="fa fa-info-circle"></i></a>
@@ -42,7 +42,7 @@
 
         <div class="info-box-content">
             <span class="info-box-text">Customer</span>
-            <span class="info-box-number">760</span>
+            <span class="info-box-number"><?= $total_pengguna ?></span>
         </div>
         <a href="#" class="small-box-footer">More Info <i class="fa fa-info-circle"></i></a>
     </div>

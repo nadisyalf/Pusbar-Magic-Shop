@@ -22,6 +22,8 @@ class Admin extends CI_Controller
             'title' => '📂Dashboard',
             'total_barang' => $this->m_admin->total_barang(),
             'total_kategori' =>$this->m_admin->total_kategori(),
+            'total_pesanan_masuk'=> $this->m_admin->total_pesanan_masuk(),
+            'total_pengguna'=> $this->m_admin->total_pengguna(),
             'isi' =>'v_admin',
         );
         $this->load->view('layout/v_wrapper_backend', $data, FALSE);

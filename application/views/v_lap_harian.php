@@ -46,11 +46,31 @@
                             <?php } ?>
                         </tbody>
                     </table>
-                    Grand Total : Rp. <?= number_format( $grand_total,0) ?>
                 </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
+
+            <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
+
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tr>
+                        <th style="width:50%">Grand Total :</th>
+                        <td>Rp. <?= number_format( $grand_total,0) ?></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
 
         <!-- accepted payments column -->
     

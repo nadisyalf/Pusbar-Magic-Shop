@@ -2,18 +2,20 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+    </div>
 
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-        Anything you want
+        
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <center><strong>Copyright &copy; 2022 <a href="<?= base_url()?>">🎇Pusbar Magic Shop</a>-</strong>Kelompok 1</center>
     </footer>
 </div>
 <!-- ./wrapper -->
+
 
 <!-- REQUIRED SCRIPTS -->
 <script>
