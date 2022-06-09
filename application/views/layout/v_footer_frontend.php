@@ -13,7 +13,7 @@
         <!-- Default to the left -->
         <center><strong>Copyright &copy; 2022 <a href="<?= base_url()?>">🎇Pusbar Magic Shop</a>-</strong>Kelompok 1</center>
     </footer>
-</div>
+
 <!-- ./wrapper -->
 
 
