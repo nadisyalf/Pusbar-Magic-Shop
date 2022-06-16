@@ -9,7 +9,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <?php echo form_open('laporan/lap_harian',) ?>
+            <?php echo form_open('laporan/lap_harian','') ?>
                 <div class="row">
                     <div class="col-sm-4">
                         <!-- text input -->

@@ -20,6 +20,7 @@
                 <h5><?= $menu->nama_kategori?></b></h5>
                 <hr>
                 <p><?= $menu->keterangan?></p>
+                
                 <hr>
                 <div class="bg-cyan py-2 px-3 mt-4">
                     <h2 class="mb-0">

@@ -25,7 +25,7 @@
                         <thead class="text-center">
                             <tr>
                                 <th>No</th>
-                                <th>Menu</th>
+                                <th>Barang</th>
                                 <th>Kategori</th>
                                 <th>Harga</th>
                                 <th>Gambar</th>

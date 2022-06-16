@@ -80,12 +80,12 @@
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" name="email" value="<?= $value->email ?>" class="form-control"  placeholder="Email" required>
+                    <input type="text" name="email" value="<?= $value->email ?>" class="form-control"  placeholder="Email" disabled="disabbled" required>
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="text" name="password" value="<?= $value->password ?>" class="form-control"  placeholder="password" required>
+                    <input type="text" name="password" value="<?= $value->password ?>" class="form-control"  placeholder="Password" disabled="disabbled" required>
                 </div>
 
 

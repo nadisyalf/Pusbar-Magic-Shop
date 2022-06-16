@@ -19,7 +19,7 @@ class Menu extends CI_Controller
     public function index()
     {
         $data = array(
-            'title' => '🍪Menu',
+            'title' => '🍪Daftar Barang',
             'menu' => $this->m_menu->get_all_data(),
             'isi' =>'menu/v_menu',
         );
